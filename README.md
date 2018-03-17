@@ -5,7 +5,7 @@ This is Guillaume's Simple pin pad:
 Main functionalities:
 • Buttons work with either touch or clicks
 • The pin is hidden except for the last number
-• The exact pin is hardcoded somewhere (and is the birthday of my first daughter. You already have a clue, nice init?)
+• The exact pin is hardcoded somewhere (and it's my birthday!)
 • The pin is 4 digits long
 • When 4 digits are entered the pin is checked
 • If the inserted PIN is correct the screen displays OK and the pin is reset

@@ -1,27 +1,36 @@
 import pinLogic from '../services/pin-logic';
 
 describe('Pin logic - ', () => {
-  it('accepts singular digits as inputs', () => {
-    pinLogic.selectDigit(9);
-    expect(pinLogic.inputPin).toEqual([9]);
+  beforeEach(() => {
+    pinLogic.resetPin();
   });
 
-  it('triggers a check against the expected pin when the 4th digit of the input is entered', () => {
+  it('accepts singular digits as inputs', () => {
+    pinLogic.selectDigit(9);
+    expect(pinLogic.pin).toEqual([9]);
+  });
+
+  it('triggers a check against the expected pin when the 4th digit of the input pin is entered', () => {
     spyOn(pinLogic, 'checkPin');
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       pinLogic.selectDigit(9);
     }
 
     expect(pinLogic.checkPin).toHaveBeenCalled();
   });
 
-  xit('returns OK if the input is a match with the hardcoded pin', () => {
+  it('returns OK if the input pin is a match with the expected pin', () => {
+    pinLogic.selectDigit(0);
+    pinLogic.selectDigit(9);
+    pinLogic.selectDigit(0);
+    pinLogic.selectDigit(4);
+    expect(pinLogic.display).toEqual('OK');
   });
 
-  xit('returns ERROR if the input is not a match with the hardcoded pin', () => {
+  xit('returns ERROR if the input pin is not a match with the expected pin', () => {
   });
 
-  xit('resets the input pin once a check has been done', () => {
+  xit('resets the input pin pin once a check has been done', () => {
   });
 });
