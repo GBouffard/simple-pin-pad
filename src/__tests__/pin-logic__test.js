@@ -6,7 +6,14 @@ describe('Pin logic - ', () => {
     expect(pinLogic.inputPin).toEqual([9]);
   });
 
-  xit('checks the input against the hardcoded pin when the 4th digit is entered', () => {
+  it('triggers a check against the expected pin when the 4th digit of the input is entered', () => {
+    spyOn(pinLogic, 'checkPin');
+
+    for (let i = 0; i < 3; i++) {
+      pinLogic.selectDigit(9);
+    }
+
+    expect(pinLogic.checkPin).toHaveBeenCalled();
   });
 
   xit('returns OK if the input is a match with the hardcoded pin', () => {

@@ -5,6 +5,13 @@ const pinLogic = {
 
   selectDigit(digit) {
     this.inputPin.push(digit);
+
+    if (this.inputPin.length === 4) {
+      this.checkPin();
+    }
+  },
+
+  checkPin() {
   }
 };
 
