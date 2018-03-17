@@ -25,9 +25,7 @@ const pinLogic = {
   },
 
   checkPin() {
-    if (this.isCorrectPin()) {
-      this.display = 'OK';
-    }
+    this.display = this.isCorrectPin() ? 'OK' : 'ERROR';
   }
 };
 

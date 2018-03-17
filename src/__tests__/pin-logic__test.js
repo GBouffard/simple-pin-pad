@@ -28,7 +28,12 @@ describe('Pin logic - ', () => {
     expect(pinLogic.display).toEqual('OK');
   });
 
-  xit('returns ERROR if the input pin is not a match with the expected pin', () => {
+  it('returns ERROR if the input pin is not a match with the expected pin', () => {
+    pinLogic.selectDigit(0);
+    pinLogic.selectDigit(6);
+    pinLogic.selectDigit(6);
+    pinLogic.selectDigit(6);
+    expect(pinLogic.display).toEqual('ERROR');
   });
 
   xit('resets the input pin pin once a check has been done', () => {
