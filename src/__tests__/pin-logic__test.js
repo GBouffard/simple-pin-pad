@@ -1,10 +1,9 @@
 import pinLogic from '../services/pin-logic';
 
-describe('pin logic', () => {
-  xit('accepts singular digits as inputs', () => {
-  });
-
-  xit('accepts a maximum of 4 digits as pin', () => {
+describe('Pin logic - ', () => {
+  it('accepts singular digits as inputs', () => {
+    pinLogic.selectDigit(9);
+    expect(pinLogic.inputPin).toEqual([9]);
   });
 
   xit('checks the input against the hardcoded pin when the 4th digit is entered', () => {
