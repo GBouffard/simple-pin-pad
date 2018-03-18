@@ -79,7 +79,13 @@ describe('Pin logic - ', () => {
       expect(pinLogic.output).toEqual('ERROR');
     });
 
-    xit('updates when a first digit is entered', () => {
+    it('updates when a first digit is entered', () => {
+      pinLogic.selectDigit(9);
+      pinLogic.selectDigit(0);
+      pinLogic.selectDigit(2);
+      pinLogic.selectDigit(1);
+      pinLogic.selectDigit(0);
+      expect(pinLogic.output).toEqual('X');
     });
   }); 
 });
