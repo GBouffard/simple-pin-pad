@@ -21,12 +21,8 @@ class App extends Component {
       <div
         className="App">
 
-        <header
-          className="App-header">
-          Guillaume's Simple Pin Pad
-        </header>
-
-        <div>
+        <div
+          className="App__pin-pad">
           <div
             id="screen-displayer" />
 
