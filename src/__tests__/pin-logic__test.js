@@ -128,7 +128,11 @@ describe('Pin logic - ', () => {
       expect(pinLogic.locked).toEqual(true);
     });
 
-    xit('update the output to LOCKED when 3 errors have been made', () => {
+    it('update the output to LOCKED when 3 errors have been made', () => {
+      enterWrongPin();
+      enterWrongPin();
+      enterWrongPin();
+      expect(pinLogic.output).toEqual('LOCKED');
     });
 
     xit('disable the keypad when locked', () => {

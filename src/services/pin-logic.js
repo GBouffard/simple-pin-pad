@@ -51,6 +51,7 @@ const pinLogic = {
 
   shouldLock() {
     if (this.errorsCount === 3) {
+      this.output = 'LOCKED';
       this.locked = true;
     }
   }
