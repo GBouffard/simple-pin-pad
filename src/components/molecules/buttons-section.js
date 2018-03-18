@@ -1,6 +1,5 @@
 import React from 'react';
 import pinLogic from '../../services/pin-logic';
-import ScreenDisplay from '../atoms/screen-display';
 import Button from '../atoms/button';
 
 const addButtonElement = (digit, array) => {

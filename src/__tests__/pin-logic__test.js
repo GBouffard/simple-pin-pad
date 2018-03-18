@@ -93,9 +93,15 @@ describe('Pin logic - ', () => {
     beforeEach(() => {
       pinLogic.resetInput();
       pinLogic.resetOutput();
+      pinLogic.resetErrors();
     });
 
-    xit('is false when initialised', () => {
+    it('is false when initialised', () => {
+      expect(pinLogic.locked).toEqual(false);
+    });
+
+    it('has no errors count when initialised', () => {
+      expect(pinLogic.errorsCount).toEqual(0);
     });
 
     xit('knows how many errors are counted', () => {

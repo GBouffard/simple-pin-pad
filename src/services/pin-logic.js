@@ -3,6 +3,8 @@ const expectedPin = [0, 9, 0, 4];
 const pinLogic = {
   input: [],
   output: '',
+  errorsCount: 0,
+  locked: false,
 
   resetInput() {
     this.input = [];
@@ -10,6 +12,11 @@ const pinLogic = {
 
   resetOutput() {
     this.output = '';
+  },
+
+  resetErrors() {
+    this.errorsCount = 0;
+    this.locked = false;
   },
 
   selectDigit(digit) {
