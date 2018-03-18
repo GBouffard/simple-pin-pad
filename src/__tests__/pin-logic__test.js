@@ -135,7 +135,13 @@ describe('Pin logic - ', () => {
       expect(pinLogic.output).toEqual('LOCKED');
     });
 
-    xit('disable the keypad when locked', () => {
+    it('disable the keypad when locked', () => {
+      enterWrongPin();
+      enterWrongPin();
+      enterWrongPin();
+      pinLogic.selectDigit(1);
+      pinLogic.selectDigit(2);
+      expect(pinLogic.output).toEqual('LOCKED');
     });
 
     xit('unlocks the keypad after 30 seconds', () => {

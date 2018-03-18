@@ -20,8 +20,10 @@ const pinLogic = {
   },
 
   selectDigit(digit) {
-    this.input.push(digit);
-    this.isPinComplete() ? this.checkPin() : this.updateOutput();
+    if (this.locked === false) {
+      this.input.push(digit);
+      this.isPinComplete() ? this.checkPin() : this.updateOutput();
+    }
   },
 
   isPinComplete() {
@@ -53,8 +55,19 @@ const pinLogic = {
     if (this.errorsCount === 3) {
       this.output = 'LOCKED';
       this.locked = true;
+      unlocksIn30Seconds();
     }
+  },
+
+  unlocks() {
+    setTimeout(() => {
+      this.resetOutput();
+      this.resetErrors();
+      sessionStorage.setItem('display', this.output);
+    }, 30000);
   }
 };
+
+const unlocksIn30Seconds = pinLogic.unlocks.bind(pinLogic);
 
 export default pinLogic;
