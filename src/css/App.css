@@ -14,7 +14,7 @@
   margin: 100px auto;
   background: linear-gradient(gold, goldenrod, darkgoldenrod);
   border: 3px solid black;
-  border-radius: 1rem;
+  border-radius: 20px;
 }
 
 .App__screen-display {
@@ -28,4 +28,16 @@
   border: 3px solid black;
   border-radius: 1rem;
   font-size: 36px;
+}
+
+.App__button-section {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, auto);
+  padding: 40px 80px;
+}
+
+.App__last-button {
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
