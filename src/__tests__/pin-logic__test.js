@@ -115,7 +115,10 @@ describe('Pin logic - ', () => {
       expect(pinLogic.errorsCount).toEqual(2);
     });
 
-    xit('is not locked when less than 3 errors have been made', () => {
+    it('is not locked when less than 3 errors have been made', () => {
+      enterWrongPin();
+      enterWrongPin();
+      expect(pinLogic.locked).toEqual(false);
     });
 
     xit('is locked when 3 errors have been made', () => {
