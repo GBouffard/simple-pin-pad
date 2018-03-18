@@ -34,7 +34,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, auto);
-  padding: 40px 80px;
+  padding: 15px 80px;
 }
 
 .App__last-button {
@@ -43,4 +43,13 @@
 }
 
 .App__pin-pad-button {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto;
+  background-color: lightgray;
+  box-shadow: 3px 3px 3px slategrey;
+  font-size: 42px;
+  font-family: monospace;
+  color: darkslategray;
+  text-shadow: 1px 1px 1px slategrey;
 }
