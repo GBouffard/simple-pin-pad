@@ -17,6 +17,15 @@
   border-radius: 20px;
 }
 
+@media screen and (max-width: 540px) {
+  .App__pin-pad {
+    width: 300px;
+    height: 300px;
+    margin: 60px auto;
+    border-radius: 10px;
+  }
+}
+
 .App__screen-display {
   display: flex;
   align-items: center;
@@ -30,11 +39,27 @@
   font-size: 36px;
 }
 
+@media screen and (max-width: 540px) {
+  .App__screen-display {
+    width: 150px;
+    height: 35px;
+    margin: 12px auto;
+    font-size: 24px;
+  }
+}
+
 .App__button-section {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, auto);
   padding: 15px 80px;
+}
+
+@media screen and (max-width: 540px) {
+  .App__button-section {
+    grid-gap: 12px;
+    padding: 11px 52px;
+  }
 }
 
 .App__last-button {
@@ -52,4 +77,13 @@
   font-family: monospace;
   color: darkslategray;
   text-shadow: 1px 1px 1px slategrey;
+}
+
+@media screen and (max-width: 540px) {
+  .App__pin-pad-button {
+    width: 45px;
+    height: 45px;
+    box-shadow: 2px 2px 2px slategrey;
+    font-size: 26px;
+  }
 }

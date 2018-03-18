@@ -51,6 +51,7 @@ Methodology:
 - I started with unit logic tests and based the game logic on how it is supposed to work.
 - I then started with the design.
 - I also added snapshots test to make sure that my React components are working in isolation.
+- I finished by adding some responsive design.
 
 What I learnt:
 ----
