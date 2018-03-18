@@ -3,10 +3,11 @@ import pinLogic from '../services/pin-logic';
 describe('Pin logic - ', () => {
   describe('Input logic - ', () => {
     beforeEach(() => {
-      pinLogic.resetPin();
+      pinLogic.resetInput();
     });
 
-    xit('is empty when initialised', () => {
+    it('is empty when initialised', () => {
+      expect(pinLogic.input).toEqual([]);
     });
 
     it('accepts singular digits as inputs', () => {
@@ -36,13 +37,17 @@ describe('Pin logic - ', () => {
 
   describe('Output logic - ', () => {
     beforeEach(() => {
-      pinLogic.resetPin();
+      pinLogic.resetInput();
+      pinLogic.resetOutput();
     });
 
-    xit('is empty when initialised', () => {
+    it('is empty when initialised', () => {
+      expect(pinLogic.output).toEqual('');
     });
 
-    xit('does not display the first digit', () => {
+    it('does not display the first digit', () => {
+      pinLogic.selectDigit(5);
+      expect(pinLogic.output).toEqual('X');
     });
 
     xit('does not display the second digit', () => {

@@ -4,16 +4,17 @@ const pinLogic = {
   input: [],
   output: '',
 
-  resetPin() {
+  resetInput() {
     this.input = [];
+  },
+
+  resetOutput() {
+    this.output = '';
   },
 
   selectDigit(digit) {
     this.input.push(digit);
-
-    if (this.isPinComplete()) {
-      this.checkPin();
-    }
+    this.isPinComplete() ? this.checkPin() : this.updateOutput();
   },
 
   isPinComplete() {
@@ -26,7 +27,13 @@ const pinLogic = {
 
   checkPin() {
     this.output = this.isCorrectPin() ? 'OK' : 'ERROR';
-    this.resetPin();
+    this.resetInput();
+  },
+
+  updateOutput() {
+    for (let i = 0; i < this.input.length; i++) {
+      this.output += 'X';
+    }
   }
 };
 
