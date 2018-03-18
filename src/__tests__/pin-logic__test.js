@@ -56,7 +56,11 @@ describe('Pin logic - ', () => {
       expect(pinLogic.output).toEqual('XX');
     });
 
-    xit('does not display the third digit', () => {
+    it('does not display the third digit', () => {
+      pinLogic.selectDigit(3);
+      pinLogic.selectDigit(6);
+      pinLogic.selectDigit(9);
+      expect(pinLogic.output).toEqual('XXX');
     });
 
     it('returns OK if the input pin is a match with the expected pin', () => {
