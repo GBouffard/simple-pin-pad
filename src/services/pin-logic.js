@@ -31,9 +31,7 @@ const pinLogic = {
   },
 
   updateOutput() {
-    for (let i = 0; i < this.input.length; i++) {
-      this.output += 'X';
-    }
+    this.output += 'X';
   }
 };
 

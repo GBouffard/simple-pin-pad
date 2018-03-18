@@ -50,7 +50,10 @@ describe('Pin logic - ', () => {
       expect(pinLogic.output).toEqual('X');
     });
 
-    xit('does not display the second digit', () => {
+    it('does not display the second digit', () => {
+      pinLogic.selectDigit(2);
+      pinLogic.selectDigit(1);
+      expect(pinLogic.output).toEqual('XX');
     });
 
     xit('does not display the third digit', () => {
