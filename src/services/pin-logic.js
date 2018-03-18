@@ -1,15 +1,15 @@
 const expectedPin = [0, 9, 0, 4];
 
 const pinLogic = {
-  pin: [],
-  display: '',
+  input: [],
+  output: '',
 
   resetPin() {
-    this.pin = [];
+    this.input = [];
   },
 
   selectDigit(digit) {
-    this.pin.push(digit);
+    this.input.push(digit);
 
     if (this.isPinComplete()) {
       this.checkPin();
@@ -17,15 +17,16 @@ const pinLogic = {
   },
 
   isPinComplete() {
-    return this.pin.length === 4
+    return this.input.length === 4
   },
 
   isCorrectPin() {
-    return JSON.stringify(this.pin) === JSON.stringify(expectedPin);
+    return JSON.stringify(this.input) === JSON.stringify(expectedPin);
   },
 
   checkPin() {
-    this.display = this.isCorrectPin() ? 'OK' : 'ERROR';
+    this.output = this.isCorrectPin() ? 'OK' : 'ERROR';
+    this.resetPin();
   }
 };
 
