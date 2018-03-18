@@ -87,5 +87,33 @@ describe('Pin logic - ', () => {
       pinLogic.selectDigit(0);
       expect(pinLogic.output).toEqual('X');
     });
-  }); 
+  });
+
+  describe('Lock down logic - ', () => {
+    beforeEach(() => {
+      pinLogic.resetInput();
+      pinLogic.resetOutput();
+    });
+
+    xit('is false when initialised', () => {
+    });
+
+    xit('knows how many errors are counted', () => {
+    });
+
+    xit('is not locked when less than 3 errors have been made', () => {
+    });
+
+    xit('is locked when 3 errors have been made', () => {
+    });
+
+    xit('update the output to LOCKED when 3 errors have been made', () => {
+    });
+
+    xit('disable the keypad when locked', () => {
+    });
+
+    xit('unlocks the keypad after 30 seconds', () => {
+    });
+  });
 });
