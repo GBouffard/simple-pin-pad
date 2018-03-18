@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import pinLogic from '../services/pin-logic';
+import ScreenDisplay from './atoms/screen-display';
 import ButtonsSection from './molecules/buttons-section';
 import '../css/App.css';
 
@@ -15,9 +15,8 @@ class App extends Component {
         </header>
 
         <div>
-          <div>
-            Screen display
-          </div>
+          <ScreenDisplay
+            display="Screen display" />
           <ButtonsSection />
         </div>
 
