@@ -45,6 +45,13 @@ const pinLogic = {
   checkForLockdown() {
     if (!this.isCorrectPin()) {
       this.errorsCount += 1;
+      this.shouldLock();
+    }
+  },
+
+  shouldLock() {
+    if (this.errorsCount === 3) {
+      this.locked = true;
     }
   }
 };
