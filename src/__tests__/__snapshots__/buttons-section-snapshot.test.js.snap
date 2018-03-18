@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonsSection -  renders correctly 1`] = `
+<section
+  className="App__button-section"
+>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="App__pin-pad-button"
+    onClick={[Function]}
+  >
+    9
+  </button>
+  <button
+    className="App__pin-pad-button App__last-button"
+    onClick={[Function]}
+  >
+    0
+  </button>
+</section>
+`;
