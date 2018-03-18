@@ -1,5 +1,19 @@
 import pinLogic from '../services/pin-logic';
 
+const enterWrongPin = () => {
+  pinLogic.selectDigit(0);
+  pinLogic.selectDigit(6);
+  pinLogic.selectDigit(6);
+  pinLogic.selectDigit(6);
+};
+
+const enterRightPin = () => {
+  pinLogic.selectDigit(0);
+  pinLogic.selectDigit(9);
+  pinLogic.selectDigit(0);
+  pinLogic.selectDigit(4);
+};
+
 describe('Pin logic - ', () => {
   describe('Input logic - ', () => {
     beforeEach(() => {
@@ -64,26 +78,17 @@ describe('Pin logic - ', () => {
     });
 
     it('returns OK if the input pin is a match with the expected pin', () => {
-      pinLogic.selectDigit(0);
-      pinLogic.selectDigit(9);
-      pinLogic.selectDigit(0);
-      pinLogic.selectDigit(4);
+      enterRightPin();
       expect(pinLogic.output).toEqual('OK');
     });  
 
     it('returns ERROR if the input pin is not a match with the expected pin', () => {
-      pinLogic.selectDigit(0);
-      pinLogic.selectDigit(6);
-      pinLogic.selectDigit(6);
-      pinLogic.selectDigit(6);
+      enterWrongPin();
       expect(pinLogic.output).toEqual('ERROR');
     });
 
     it('updates when a first digit is entered', () => {
-      pinLogic.selectDigit(9);
-      pinLogic.selectDigit(0);
-      pinLogic.selectDigit(2);
-      pinLogic.selectDigit(1);
+      enterWrongPin();
       pinLogic.selectDigit(0);
       expect(pinLogic.output).toEqual('X');
     });
@@ -104,7 +109,10 @@ describe('Pin logic - ', () => {
       expect(pinLogic.errorsCount).toEqual(0);
     });
 
-    xit('knows how many errors are counted', () => {
+    it('knows how many errors are counted', () => {
+      enterWrongPin();
+      enterWrongPin();
+      expect(pinLogic.errorsCount).toEqual(2);
     });
 
     xit('is not locked when less than 3 errors have been made', () => {

@@ -34,11 +34,18 @@ const pinLogic = {
 
   checkPin() {
     this.output = this.isCorrectPin() ? 'OK' : 'ERROR';
+    this.checkForLockdown();
     this.resetInput();
   },
 
   updateOutput() {
     this.output = this.input.length === 1 ? 'X' : this.output + 'X';
+  },
+
+  checkForLockdown() {
+    if (!this.isCorrectPin()) {
+      this.errorsCount += 1;
+    }
   }
 };
 
