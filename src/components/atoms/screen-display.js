@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 const ScreenDisplay = ({ display }) => {
   return (
-    <div>
+    <div
+      className="App__screen-display">
       {display}
     </div>
   );

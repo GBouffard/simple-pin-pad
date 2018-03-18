@@ -23,10 +23,12 @@ class App extends Component {
 
         <div
           className="App__pin-pad">
+
           <div
             id="screen-displayer" />
 
           <ButtonsSection />
+
         </div>
 
       </div>

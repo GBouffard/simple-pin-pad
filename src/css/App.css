@@ -16,3 +16,16 @@
   border: 3px solid black;
   border-radius: 1rem;
 }
+
+.App__screen-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 50px;
+  margin: 20px auto;
+  background: linear-gradient(seashell, white, wheat);
+  border: 3px solid black;
+  border-radius: 1rem;
+  font-size: 36px;
+}
