@@ -30,12 +30,8 @@ describe('Pin logic - ', () => {
     });  
 
     it('triggers a check against the expected pin when the 4th digit of the input pin is entered', () => {
-      spyOn(pinLogic, 'checkPin');  
-
-      for (let i = 0; i < 4; i++) {
-        pinLogic.selectDigit(9);
-      }  
-
+      spyOn(pinLogic, 'checkPin');
+      enterWrongPin();
       expect(pinLogic.checkPin).toHaveBeenCalled();
     });   
 
@@ -144,7 +140,12 @@ describe('Pin logic - ', () => {
       expect(pinLogic.output).toEqual('LOCKED');
     });
 
-    xit('unlocks the keypad after 30 seconds', () => {
+    it('unlocks the keypad after 30 seconds', () => {
+      spyOn(window, 'setTimeout');
+      enterWrongPin();
+      enterWrongPin();
+      enterWrongPin();
+      expect(setTimeout).toHaveBeenCalled();
     });
   });
 });
