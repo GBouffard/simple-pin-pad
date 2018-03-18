@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import pinLogic from '../../services/pin-logic';
+import ScreenDisplay from '../atoms/screen-display';
 import Button from '../atoms/button';
 
 const addButtonElement = (digit, array) => {
@@ -7,7 +8,10 @@ const addButtonElement = (digit, array) => {
     <Button
       key={digit}
       text={(digit.toString())}
-      onClick={() => { pinLogic.selectDigit(digit); }} />
+      onClick={() => { 
+        pinLogic.selectDigit(digit);
+        sessionStorage.setItem('display', pinLogic.output);
+      }} />
   );
 }
 
